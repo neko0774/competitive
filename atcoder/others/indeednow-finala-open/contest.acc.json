@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "indeednow-finala-open",
+    "title": "Indeedなう（オープンコンテスト）",
+    "url": "https://atcoder.jp/contests/indeednow-finala-open"
+  },
+  "tasks": [
+    {
+      "id": "indeednow_2015_finala_a",
+      "label": "A",
+      "title": "Table Tennis",
+      "url": "https://atcoder.jp/contests/indeednow-finala-open/tasks/indeednow_2015_finala_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "indeednow_2015_finala_b",
+      "label": "B",
+      "title": "Office Ninja",
+      "url": "https://atcoder.jp/contests/indeednow-finala-open/tasks/indeednow_2015_finala_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "indeednow_2015_finala_c",
+      "label": "C",
+      "title": "Optimal Recommendations",
+      "url": "https://atcoder.jp/contests/indeednow-finala-open/tasks/indeednow_2015_finala_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "indeednow_2015_finala_d",
+      "label": "D",
+      "title": "Longest Path",
+      "url": "https://atcoder.jp/contests/indeednow-finala-open/tasks/indeednow_2015_finala_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "indeednow_2015_finala_e",
+      "label": "E",
+      "title": "Page Rank",
+      "url": "https://atcoder.jp/contests/indeednow-finala-open/tasks/indeednow_2015_finala_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "indeednow_2015_finala_f",
+      "label": "F",
+      "title": "就職活動",
+      "url": "https://atcoder.jp/contests/indeednow-finala-open/tasks/indeednow_2015_finala_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "contest": {
+    "id": "joisc2016",
+    "title": "JOI春合宿2016 オンラインジャッジ",
+    "url": "https://atcoder.jp/contests/joisc2016"
+  },
+  "tasks": [
+    {
+      "id": "joisc2016_a",
+      "label": "A",
+      "title": "マトリョーシカ人形",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_b",
+      "label": "B",
+      "title": "神経衰弱",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_c",
+      "label": "C",
+      "title": "ソリティア",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_d",
+      "label": "D",
+      "title": "雇用計画",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_e",
+      "label": "E",
+      "title": "サンドイッチ",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_f",
+      "label": "F",
+      "title": "トイレ",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_g",
+      "label": "G",
+      "title": "ダンジョン2",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_g",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_h",
+      "label": "H",
+      "title": "回転寿司",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_h",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_i",
+      "label": "I",
+      "title": "電報",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_i",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_j",
+      "label": "J",
+      "title": "危険なスケート",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_j",
+      "directory": {
+        "path": "j",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_k",
+      "label": "K",
+      "title": "雪降る道路",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_k",
+      "directory": {
+        "path": "k",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "joisc2016_l",
+      "label": "L",
+      "title": "最悪の記者2",
+      "url": "https://atcoder.jp/contests/joisc2016/tasks/joisc2016_l",
+      "directory": {
+        "path": "l",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

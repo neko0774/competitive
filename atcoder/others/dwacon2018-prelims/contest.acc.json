@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "dwacon2018-prelims",
+    "title": "第4回 ドワンゴからの挑戦状 予選",
+    "url": "https://atcoder.jp/contests/dwacon2018-prelims"
+  },
+  "tasks": [
+    {
+      "id": "dwacon2018_prelims_a",
+      "label": "A",
+      "title": "ニコニコ文字列判定",
+      "url": "https://atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "dwacon2018_prelims_b",
+      "label": "B",
+      "title": "2525文字列分解",
+      "url": "https://atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "dwacon2018_prelims_c",
+      "label": "C",
+      "title": "Kill/Death",
+      "url": "https://atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "dwacon2018_prelims_d",
+      "label": "D",
+      "title": "ディスクの節約",
+      "url": "https://atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "dwacon2018_prelims_e",
+      "label": "E",
+      "title": "ニワンゴくんの家探し",
+      "url": "https://atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

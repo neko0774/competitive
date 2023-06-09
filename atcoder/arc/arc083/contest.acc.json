@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc083",
+    "title": "AtCoder Regular Contest 083",
+    "url": "https://atcoder.jp/contests/arc083"
+  },
+  "tasks": [
+    {
+      "id": "arc083_a",
+      "label": "C",
+      "title": "Sugar Water",
+      "url": "https://atcoder.jp/contests/arc083/tasks/arc083_a",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc083_b",
+      "label": "D",
+      "title": "Restoring Road Network",
+      "url": "https://atcoder.jp/contests/arc083/tasks/arc083_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc083_c",
+      "label": "E",
+      "title": "Bichrome Tree",
+      "url": "https://atcoder.jp/contests/arc083/tasks/arc083_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc083_d",
+      "label": "F",
+      "title": "Collecting Balls",
+      "url": "https://atcoder.jp/contests/arc083/tasks/arc083_d",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}
