@@ -14,28 +14,31 @@ INF = 10**9
 #1 -> left
 #2 -> up
 #3 -> down
-def change(x, y):
-    return y*W+x
-S = [[i for i in input()] for _ in range(H)]
+S=[1 if x=="." else 0 for _ in range(H) for x in input().rstrip()]
+
 from collections import deque
 q = deque([[sx, sy, i] for i in range(4)])
-dist = [[INF]*4 for _ in range(W*H)]
+dist = [INF for _ in range(W*H*4)]
+def ch(x, y, d):
+    return 4*(y*W+x)+d
 for i in range(4):
-    dist[change(sx, sy)][i] = 0
+    dist[ch(sx, sy, i)] = 0
 while q:
-    print(q)
     x, y, d = q.popleft()
+    m = dist[ch(x, y, d)]
     if x==gx and y==gy:
-        print(dist[change(gx, gy)][d])
+        print(m)
         exit()
+    nx = x+dxy[d][0]
+    ny = y+dxy[d][1]
+    if 0<=nx and nx<W and ny<H and 0<=ny and S[ny*W+nx] and dist[ch(nx, ny, d)]>m:
+        dist[ch(nx, ny, d)] = m
+        q.appendleft([nx, ny, d])
+    
     for i, j, nd in dxy:
         nx = x+i
         ny = y+j
-        if 0<=nx<W and 0<=ny<H and S[ny][nx]==".":
-            if d==nd and dist[change(nx, ny)][d]>dist[change(x, y)][d]:
-                dist[change(nx, ny)][d] = dist[change(x, y)][d]
-                q.appendleft([nx, ny, d])
-            elif dist[change(nx, ny)][nd]>dist[change(nx, ny)][d]+1:
-                dist[change(nx, ny)][nd] = dist[change(x, y)][d]+1
+        #print(nx, ny, S[ny][nx], dist[change(nx, ny)])
+        if d!=nd and 0<=nx and nx<W and 0<=ny and ny<H and S[ny*W+nx] and dist[ch(nx, ny, nd)]>m+1:
+                dist[ch(nx, ny, nd)] = m+1
                 q.append([nx, ny, nd])
-print(dist)
