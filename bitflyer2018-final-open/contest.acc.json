@@ -1,0 +1,97 @@
+{
+  "contest": {
+    "id": "bitflyer2018-final-open",
+    "title": "codeFlyer （bitFlyer Programming Contest）オープンコンテスト",
+    "url": "https://atcoder.jp/contests/bitflyer2018-final-open"
+  },
+  "tasks": [
+    {
+      "id": "bitflyer2018_final_a",
+      "label": "A",
+      "title": "値札",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "bitflyer2018_final_b",
+      "label": "B",
+      "title": "交通費",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "bitflyer2018_final_c",
+      "label": "C",
+      "title": "部分文字列と括弧",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "bitflyer2018_final_d",
+      "label": "D",
+      "title": "数列 XOR",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "bitflyer2018_final_e",
+      "label": "E",
+      "title": "数式とクエリ",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "bitflyer2018_final_f",
+      "label": "F",
+      "title": "配信パズル",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "bitflyer2018_final_g",
+      "label": "G",
+      "title": "Following Permutations",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_g",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "bitflyer2018_final_h",
+      "label": "H",
+      "title": "三角形と格子点",
+      "url": "https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_h",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}
