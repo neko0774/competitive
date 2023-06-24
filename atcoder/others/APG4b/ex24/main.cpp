@@ -17,9 +17,49 @@ struct Clock{
     second = s;
   }
   string to_str(){
-    
-  }
-}
+    string ans;
+    if (hour<10){ans += '0';}
+    ans += to_string(hour);
+    ans += ':';
+    if(minute<10){ans += '0';}
+    ans += to_string(minute);
+    ans += ':';
+    if(second<10){ans += '0';}
+    ans += to_string(second);
+    return ans;
+  };
+
+  void shift(int diff){
+    int diff_hour = diff/3600; diff %= 3600;
+    int diff_minute = diff/60; diff %= 60;
+    int diff_second = diff;
+    if(second+diff_second<0){
+      second = second+60+diff_second;
+      diff_minute -= 1;
+    }else if(second+diff_second>=60){
+      second = second+diff_second-60;
+      diff_minute += 1;
+    }else{
+      second += diff_second;
+    }
+    if(minute+diff_minute<0){
+      minute = minute+60+diff_minute;
+      diff_hour -= 1;
+    }else if(minute+diff_minute>=60){
+      minute = minute+diff_minute-60;
+      diff_hour += 1;
+    }else{
+      minute += diff_minute;
+    }
+    if(hour+diff_hour<0){
+      hour = hour+24+diff_hour;
+    }else if(hour+diff_hour>=24){
+      hour = hour+diff_hour-24;
+    }else{
+      hour += diff_hour;
+    }
+  };
+};
 
 // メンバ関数 set の定義を書く
 //   関数名: set
