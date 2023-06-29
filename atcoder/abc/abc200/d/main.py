@@ -1,22 +1,21 @@
 N = int(input())
 A = [int(i)%200 for i in input().split()]
 
-dp = [[0 for _ in range(201)] for _ in range(N+1)]
-dp[0][0] = 1
-for j, a in enumerate(A):
-  ndp = [0 for _ in range(201)]
-  for n in range(201):
-    dp[j+1][(n+a)%200] = dp[j][n]
-  for i in range(201):
-    dp[j+1][i] += dp[j][i]
-dp[-1][0] -= 1
-if max(dp[-1])<=1:
-  print("No")
-  exit()
-
-for i in ragne(201):
-  if dp[-1][i]>=2:
-    break
-
-
-for n in range(N)[::-1]:
+dp = [[[] for _ in range(201)] for _ in range(N+1)]
+for i in range(N):
+  if len(dp[i+1][0])<2: dp[i+1][A[i]].append([i+1])
+  for j in range(201):
+    if dp[i][j]:
+      #print(1, dp[i][j])
+      for lis in dp[i][j]:
+        if len(dp[i+1][(j+A[i])%200])<2: dp[i+1][(j+A[i])%200].append(lis+[i+1])
+        if len(dp[i+1][j])<2: dp[i+1][j].append(lis)
+  #print(dp[i+1])
+#dp[-1][0].append([])
+for i in range(201):
+  if len(dp[-1][i])>=2:
+    print("Yes")
+    print(len(dp[-1][i][0]), *dp[-1][i][0])
+    print(len(dp[-1][i][1]), *dp[-1][i][1])
+    exit()
+print("No")
