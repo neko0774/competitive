@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int INF = 1000000000;
-#define longlong int;
 
 
 bool is_valid(int x, vector<vector<int>> A, int K, int N){
@@ -32,7 +31,7 @@ int main(){
     }
   }
 
-  int ok=0, ng=INF;
+  int ok=0, ng=INF+1;
   while(abs(ok-ng)>1){
     int m = (ok+ng)/2;
     if(is_valid(m, A, K, N)){ok = m;}
