@@ -23,7 +23,11 @@ def mult():
   while begin<len(S) and S[begin] in ['*', '/']:
     if S[begin]=='/':
       consume('/')
-      ret //= blk()
+      #print(ret, begin)
+      if ret<0:
+        ret = -(abs(ret)//blk())
+      else:
+        ret //= blk()
     else:
       consume('*')
       ret *= blk()
@@ -55,5 +59,4 @@ ans = []
 for _ in range(N):
   S = input()[:-1]
   begin = 0
-  ans.append(expr())
-print(*ans, sep="\n")
+  print(expr())
