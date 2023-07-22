@@ -2,8 +2,8 @@
 using namespace std;
 
 int main(){
-  int L, R;
-  cin >> L >> R;
-
+  int N;
+  long K;
+  cin >> N >> K;
   
 }

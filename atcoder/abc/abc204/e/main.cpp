@@ -19,6 +19,7 @@ int main(){
   while(!q.empty()){
     for(int i=0;i<N;i++){
       
+      
     }
   }
 }
