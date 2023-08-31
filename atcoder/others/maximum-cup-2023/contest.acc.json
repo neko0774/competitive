@@ -1,0 +1,97 @@
+{
+  "contest": {
+    "id": "maximum-cup-2023",
+    "title": "Maximum-Cup 2023",
+    "url": "https://atcoder.jp/contests/maximum-cup-2023"
+  },
+  "tasks": [
+    {
+      "id": "maximum_cup_2023_a",
+      "label": "A",
+      "title": "倍数ペア",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "maximum_cup_2023_b",
+      "label": "B",
+      "title": "等差数列と数え上げ",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "maximum_cup_2023_c",
+      "label": "C",
+      "title": "黒板",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "maximum_cup_2023_d",
+      "label": "D",
+      "title": "編集ゲーム",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "maximum_cup_2023_e",
+      "label": "E",
+      "title": "小大小大……",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "maximum_cup_2023_f",
+      "label": "F",
+      "title": "01文字列の構築",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "maximum_cup_2023_g",
+      "label": "G",
+      "title": "イノシシ対策",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_g",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "maximum_cup_2023_h",
+      "label": "H",
+      "title": "変数の最大化",
+      "url": "https://atcoder.jp/contests/maximum-cup-2023/tasks/maximum_cup_2023_h",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    }
+  ]
+}
