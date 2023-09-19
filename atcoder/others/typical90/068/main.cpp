@@ -30,6 +30,8 @@ struct dsu{
     return root[y];
   }
 
+  int ssize(int x){return size[x];}
+
   bool same(int x, int y){
     return find(x)==find(y);
   }
@@ -65,48 +67,39 @@ int main(){
   cin >> N;
   cin >> Q;
   ll T, X, Y, V;
-  vector<vector<ll>> query, add;
-  unordered_map<int, vector<ll>> res;
-  unordered_set<int> s;
-  vector<vector<pair<ll, ll>>> G(N, vector<pair<ll, ll>>());
   dsu uf(N); 
+  vector<vector<ll>> query;
+  vector<ll> cos(N, -1);
   for(int i=0;i<Q;i++){
     cin >> T >> X >> Y >> V;
     X--;Y--;
     query.push_back({T, X, Y, V});
     if(T==0){
-      G[X].push_back(make_pair(Y, V));
-      G[Y].push_back(make_pair(X, V));
-    }else{s.insert(X)};
-  }
-  vector<bool> done(N, false);
-  for(int x=0;x<N;x++){
-    if(result[x]!=-1&&!done[x]){
-      done[x] = true;
-      cout << x << endl;
-      queue<int> q;
-      q.push(x);
-      while(!q.empty()){
-        int x = q.front();q.pop();
-        for(auto nx: G[x]){
-          if(!done[nx.first]&&result[nx.first]==-1){
-            done[nx.first] = true; 
-            q.push(nx.first);
-            result[nx.first] = nx.second-result[x];
-          }
-        }
-      }
+      cos[X] = V;
     }
   }
-  cout << endl;
-  cout << endl;
-  show(result);
-  for(auto q: query){
-    if(q[0]==0){
-      uf.merge(q[1], q[2]);
+  vector<ll> A(N, -1);
+  int x;
+  for(int i=0;i<N;i++){
+    x = i;
+    if(A[x]!=-1) continue;
+    A[x] = 0;
+    while(x<N){
+      if(cos[x]!=-1){
+        A[x+1] = cos[x]-A[x];
+        x++;
+      }else break;
+    }
+  }
+
+  for(int i=0;i<Q;i++){
+    int T = query[i][0], X = query[i][1], Y = query[i][2];
+    ll Z = query[i][3];
+    if(T==0){
+      uf.merge(X, Y);
     }else{
-      if(uf.same(q[1], q[2])) cout << result[q[2]] << endl;
-      else cout << "Ambiguous" << endl;
+      if(!uf.same(X, Y)) cout << "Ambiguous" << endl;
+      else cout << A[Y]+((Y-X)%2==0?(Z-A[X]):-(Z-A[X])) << endl;
     }
   }
 }
