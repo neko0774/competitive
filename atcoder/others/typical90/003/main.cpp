@@ -1,28 +1,49 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
+#include<queue>
+#include<vector>
 using namespace std;
-bool is_good(vector<int> ary){
-  int n = 0;
-  for(auto i: ary){
-    n += i;
-    if(n<0) return false;
+void show(vector<vector<int>> G){
+  for(auto a: G){
+    for(auto x: a) cout << x << ' ';
+    cout << endl;
   }
-  if(n==0) return true;
-  return false;
+}
+
+
+pair<int, int> bfs(vector<vector<int>> &G, int s){
+  int N = G.size();
+  vector<int> dist(N, -1);
+  queue<int> q;
+  q.push(s);
+  dist[s]=0;
+  int lx;
+  while(!q.empty()){
+    int x = q.front();q.pop();
+    for(auto nx: G[x]){
+      if(dist[nx]==-1){
+        q.emplace(nx);
+        dist[nx] = dist[x]+1;
+        if(dist[nx]>dist[lx]) lx = nx;
+      }
+    }
+  }
+  return make_pair(lx, dist[lx]);
 }
 
 int main(){
   int N;
   cin >> N;
-  for(int i=0;i<1<<N;i++){
-    vector<int> number(N);
-    for(int j=0;j<N;j++){
-      if(i>i&1) number.push_back(1);
-      else number.push_back(-1);
-    }
-    if(is_good(number)){
-      for(auto n: number) cout << (n==1) ? '(' : ')';
-      cout << '\n';
-    }
+  vector<vector<int>> G(N, vector<int>());
+  
+  for(int i=0;i<N-1;i++){
+    int u, v;
+    cin >> u >> v;
+    u--;
+    v--;
+    G[u].push_back(v);
+    G[v].push_back(u);
   }
+  pair<int, int> d = bfs(G, 0);
+  pair<int, int> s = bfs(G, d.first);
+  cout << s.second+1 << endl;
 }
