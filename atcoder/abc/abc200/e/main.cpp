@@ -5,5 +5,5 @@ int main(){
   int N;
   long K;
   cin >> N >> K;
-  
+    
 }
