@@ -2,7 +2,6 @@
 using namespace std;
 #define ll long long
 
-
 void show(vector<vector<ll>> A){
   for(int i=0;i<A.size();i++){
     for(int j=0;j<50;j++){
