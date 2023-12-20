@@ -1,18 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 const long long mod = 1e9+7;
 
+ll sum(vector<ll> A, ll N){
+  ll ret = 0;
+  for(int i=0;i<N;i++){
+    ret += (i*A[i])-(N-i-1)*A[i];
+    ret %= mod;
+  }
+  return ret;
+}
 
 int main(){
-  long long A, B;
-  cin >> A >> B;
-  vector<long long> X(A), Y(B);
-  for(int i=0;i<A;i++){
+  ll N, M;
+  cin >> N >> M;
+  vector<long long> X(N), Y(M);
+  for(int i=0;i<N;i++){
     cin >> X[i];
   }
-  for(int j=0;j<B;j++){
+  for(int j=0;j<M;j++){
     cin >> Y[j];
   }
-  cout << X[A-1]-X[0] << ' ' << Y[B-1]-Y[0] << endl;
-  cout << (A-1)%mod*(B-1)%mod*(X[A-1]-X[0])%mod*(Y[B-1]-Y[0])%mod << endl;
+  cout << sum(X, N)*sum(Y, M)%mod<<endl;
 }
