@@ -18,4 +18,8 @@ int main(){
     b--;
     G[a].push_back(make_pair(b, c));
   }
+
+  while(true){
+    
+  }
 }
