@@ -33,26 +33,26 @@ while cur<Q and querys[cur][0]==0:
 for i in range(M):
 
   if (op[i][0]=="1" and not is_switch) or (op[i][0]=="2" and is_switch):
+    x_sign *= -1
     is_switch = not is_switch
-    y_sign *= -1
 
   elif (op[i][0]=="1" and is_switch) or (op[i][0]=="2" and not is_switch):
+    y_sign *= -1
     is_switch = not is_switch
-    x_sign *= -1
 
   elif (op[i][0]=="3" and not is_switch) or (op[i][0]=="4" and is_switch):
     _, p = map(int, op[i].split())
-    x_buffer += x_sign*2*p
     x_sign *= -1
-
+    x_buffer = x_sign*2*p+x_buffer
   else:
     _, p = map(int, op[i].split())
-    y_buffer += y_sign*2*p
     y_sign *= -1
+    y_buffer = y_sign*2*p+y_buffer
+
   while cur<Q and querys[cur][0] == i+1:
     Y = y_buffer+y_sign*pos[querys[cur][1]][1]
     X = x_buffer+x_sign*pos[querys[cur][1]][0]
-    print(cur, x_sign, x_buffer)
+    print(cur, x_sign, x_buffer, y_sign, y_buffer, is_switch)
     if is_switch:
       ans[querys[cur][-1]] = [Y, X]
     else:

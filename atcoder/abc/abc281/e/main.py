@@ -129,50 +129,30 @@ class SortedMultiset(Generic[T]):
             if a[-1] > x:
                 return ans + bisect_right(a, x)
             ans += len(a)
-        return 
+        return
 
-def main():
-    N, M, K = map(int, input().split())
-    A = [int(a) for a in input().split()]
 
-    ans = []
-    used = SortedMultiset()
-    waiting = SortedMultiset(A[:M])
-    memo = 0
-    for i in range(K):
-        num = waiting[0]
-        waiting.discard(num)
-        memo += num
-        used.add(num)
-    ans.append(memo)
+N, M, K = map(int, input().split())
+A = [int(i) for i in input().split()]
+ST = SortedMultiset()
+ST.add(10**10)
+ans = []
+SUM = 0
+for a in A[:M]:
+    ST.add(a)
+for i in range(K):
+    SUM += ST[i]
+ans.append(SUM)
+for i in range(N-M):
+    #print(ST.a, A[i], ST[K], A[i+M])
+    if A[i]<=ST[K-1]:
+        SUM -= A[i]
+        SUM += ST[K]
+    ST.discard(A[i])
+    if A[i+M]<=ST[K-1]:
+        SUM -= ST[K-1]
+        SUM += A[i+M]
+    ST.add(A[i+M])
+    ans.append(SUM)
 
-    for i in range(N-M):
-        if A[i] in used:
-            used.discard(A[i])
-            memo -= A[i]
-            if len(waiting)==0:
-                memo += A[i+M]
-                used.add(A[i+M])
-            else:
-                n = waiting[0]
-                if A[i+M]<n:
-                    memo += A[i+M]
-                    used.add(A[i+M])
-                else:
-                    memo += n
-                    used.add(n)
-                    waiting.add(A[i+M])
-                    waiting.discard(n)
-        else:
-            waiting.discard(A[i])
-            n = used[-1]
-            if A[i+M]<n:
-                memo += A[i+M]-n
-                used.add(A[i+M])
-                used.discard(n)
-                waiting.add(n)
-            else:
-                waiting.add(A[i+M])
-        ans.append(memo)
-    print(*ans)
-main()
+print(*ans)
