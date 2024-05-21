@@ -1,38 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool good(long x, vector<long> &A, long K){
-  for(auto &a: A) K -= min(x, a);
-  return K>=0;
-}
-
-
 int main(){
   long N, K;
   cin >> N >> K;
-  vector<long> A(N);
+  vector<long long> A(N, 0);
   for(int i=0;i<N;i++){
     cin >> A[i];
   }
-  //went terough n times, and still left smth(=including 0)
-  long ok = 0;
-  long bad = 1e12+1;
-  while(abs(ok-bad)>1){
-    long m = (ok+bad)/2;
-    if(good(m, A, K)) ok = m;
-    else bad = m;
+  long long ok = 0, ng = 1e12;
+  long long cnt;
+  while(abs(ok-ng)>1){
+    long long mid = (ok+ng)/2;
+    cnt = 0;
+    for(int i=0;i<N;i++){
+      if(A[i]>=mid) cnt += mid;
+      else cnt += A[i];
+    }
+    if(cnt<=K) ok = mid;
+    else ng = mid;
   }
-  for(auto &a: A){
-    long dec = min(a, ok);
-    a -= dec;
-    K -= dec;
-  }
-  for(auto &a: A){
-    if (K>0&&a>0){
-      a--;
-      K--;
+  long long res = K;
+  for(int i=0;i<N;i++){
+    if(A[i]>=ok){
+      A[i] -= ok;
+      res -= ok;
+    }else{
+      res -= A[i];
+      A[i] = 0;
     }
   }
-  for(auto &a: A) cout << a << ' ';
+  for(int i=0;i<N;i++){
+    if(res&&A[i]>0){
+      A[i]--;res--;
+    }
+  }
+  for(auto a: A)cout << a << ' ';
   cout << endl;
 }
