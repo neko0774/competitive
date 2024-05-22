@@ -39,21 +39,25 @@ class UnionFind:
 			G[self.find_root(i)].append(i)
 		return [i for i in G if i]
 
-def main():
-    N, M = map(int, input().split())
-    P = [int(i)-1 for i in input().split()]
-    uf = UnionFind(N)
+N, M = map(int, input().split())
+uf =  UnionFind(N)
+P = [int(i)-1 for i in input().split()]
+for i in range(M):
+  u, v = map(int, input().split())
+  u -= 1
+  v -= 1
+  uf.merge(u, v)
+pos = [-1]*N
+for i, p in enumerate(P):
+  pos[p] = i
 
-    ans = 0
-    for _ in range(M):
-        x,y = map(int, input().split())
-        uf.merge(x-1, y-1)
-    
-    for g in uf.groups():
-        g = set(g)
-        comp = set()
-        for gg in g:
-            comp.add(P[gg])
-        ans += len(g.intersection(comp))
-    print(ans)
-main()
+ans = 0
+for G in uf.groups():
+  count = set()
+  for x in G:
+    count.add(pos[x])
+  
+  for x in G:
+    if x in count:
+      ans += 1
+print(ans)
