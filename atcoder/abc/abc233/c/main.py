@@ -1,14 +1,21 @@
 N, X = map(int, input().split())
+L = []
+for _ in range(N):
+  L.append([int(i) for i in input().split()])
+
+cur = 1
 ans = 0
-L = [[int(i) for i in input().split()] for _ in range(N)]
-import pypyjit
-pypyjit.set_param('max_unroll_recursion=-1')
-def dfs(x, cur=0):
-    global ans
-    if cur==N:
-        if x==X: ans += 1
-        return
-    for num in L[cur][1:]:
-        if not x*num>X: dfs(x*num, cur+1)
-dfs(1)
+def dfs(depth):
+  global cur, ans
+  if cur>X:
+    return
+  if cur == X and depth ==N:
+    ans += 1
+  if depth == N:
+    return
+  for l in L[depth][1:]:
+    cur *= l
+    dfs(depth+1)
+    cur //=l
+dfs(0)
 print(ans)
