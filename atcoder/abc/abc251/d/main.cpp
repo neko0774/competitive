@@ -4,13 +4,19 @@ using namespace std;
 int main(){
   int W;
   cin >> W;
-  int s = 1;
-  cout << 99*3+1 << endl;
-  for(int i=0;i<3;i++){
-    for(int j=1;j<100;j++){
-      cout << s*j << ' ';
-    }
-    s *= 100;
+  int cnt = 0;
+  cout << 298 << endl;
+  for(int i=1;i<100;i++){
+    cout << i << ' ';
+    cnt++;
+  }
+  for(int i=100;i<10000;i+=100){
+    cout << i << ' ';
+    cnt++;
+  }
+  for(int i=10000;i<1000000;i+=10000){
+    cout << i << ' ';
+    cnt++;
   }
   cout << 1000000 << endl;
 }

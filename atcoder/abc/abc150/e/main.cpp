@@ -21,12 +21,12 @@ int main(){
   for(int i=0;i<N;i++){
     cin >> C[i];
   }
-  ll rev = 50000004;
+  ll rev = pow(2, mod-2);
   cout << rev << endl;
   sort(C.begin(), C.end());
   ll ans = 0;
   for(int i=0;i<N;i++){
-    ans += C[i]*(N-1)%mod*pow(2ll, (ll)(2*N-1))%mod*rev%mod;
+    ans += C[i]*(N-i+1)%mod*pow(2ll, (ll)(2*N-1))%mod*rev%mod;
   }
   cout << ans << endl;
 }
