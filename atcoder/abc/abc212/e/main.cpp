@@ -15,21 +15,22 @@ int main(){
   }
   vector<vector<ll>> dp(K+1, vector<ll>(N, 0));
   dp[0][0] = 1;
-  ll sum = 1;
-  for(int j=0;j<K;j++){
+  ll total = 1;
+  for(int i=0;i<K;i++){
     vector<ll> red(N);
     ll memo = 0;
-    for(auto [u, v]: G){
-      red[u] += dp[j][v];
-      red[v] += dp[j][u]; 
+    for(auto [u, v]:G){
+      red[u] += dp[i][v];
+      red[v] += dp[i][u];
+      red[u] %= mod;
+      red[v] %= mod;
     }
-    for(int i=0;i<N;i++){
-      dp[j+1][i] += sum-red[i];
-      dp[j+1][i] %= mod;
-      memo += dp[j+1][i];
-      memo %= mod;
+    for(int j=0;j<N;j++){
+        dp[i+1][j] += total-red[j]-dp[i][j];
+        dp[i+1][j] %= mod;
+        memo = (memo+dp[i+1][j])%mod;
     }
-    sum = memo;
+    total = memo;
   }
-  cout << dp[K][0] << endl;
+  cout << (dp[K][0]+mod)%mod << endl;
 }
