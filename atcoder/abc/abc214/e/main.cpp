@@ -6,38 +6,27 @@ void solve()
 {
   int N;
   cin >> N;
-  set<pair<int, int>> st;
+  priority_queue<int> st;
   vector<pair<int, int>> event(N);
   for (int i = 0; i < N; i++)
   {
     cin >> event[i].first >> event[i].second;
   }
   sort(event.begin(), event.end());
-  int las = 0;
-  for (auto [l, r] : event)
+  int las = event[0].first;
+  for (auto &[l, r] : event)
   {
-    auto i = st.lower_bound(l);
-    i--;
-    while (i != st.begin())
+    while (l - las > 0 && st.size() > 0 && -st.top() >= l)
     {
-      if (i->second)
+      las++;
+      st.pop();
     }
-    st.emplace(-r, -l);
+    st.emplace(-r - 1);
     las = l;
   }
-  int sz = q.size();
-  for (int i = 0; i < sz; i++)
-  {
-    if (-q.top() >= las)
-      q.pop(), las++, sz--;
-  }
-  cout << (q.size() == 0 ? "Yes" : "No") << endl;
-  for (int i = 0; i < sz; i++)
-  {
-    cout << -q.top() << ' ';
-    q.pop();
-  }
-  cout << endl;
+  while (-st.top() > las)
+    st.pop(), las++;
+  cout << (st.size() == 0 ? "Yes" : "No") << endl;
 }
 
 int main()
