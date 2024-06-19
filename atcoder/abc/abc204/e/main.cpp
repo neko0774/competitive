@@ -1,35 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
-const long long INF=1e15;
+#define ll long long
+const long long INF=1e18;
+
+
+ll find(ll D, ll t){
+  ll ret = INF;
+  ll d = (ll)(sqrt((double)D))-1LL;
+  ll cur = max(t, d);
+  for(ll i=0;i<=3;i++){
+    ret = min(ret, D/(cur+i+1LL)+cur+i);
+  }
+  return ret;
+}
 
 int main(){
   int N, M;
-  vector<vector<tuple<int, int, int>>> G(N);
-  vector<int> dist(N, INF);
   cin >> N >> M;
+  ll A, B, C, D;
+  vector<vector<vector<ll>>> G(N);
   for(int i=0;i<M;i++){
-    int A,B,C,D;
     cin >> A >> B >> C >> D;
     A--;
     B--;
-    G[A].push_back(make_tuple(B, C, D));
-    G[B].push_back(make_tuple(A, C, D));
+    G[A].push_back({B, C, D});
+    G[B].push_back({A, C, D});
   }
-
-  priority_queue<pair<int, long long>> q;
+  vector<ll> dist(N, INF);
+  priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> q;
   dist[0] = 0;
-  q.push(make_pair(0, 0));
+  q.emplace(0, 0);
   while(!q.empty()){
-    int x = q.top().first;
-    long long time = q.top().second;
-    q.pop();
-    if (dist[x]<time) continue;
-    for(auto e:G[x]){
-      int nx = get<0>(e);
-      int C = get<1>(e);
-      int D = get<2>(e);
-      
-      
+    auto [t, x] = q.top(); q.pop();
+    if(dist[x]<t) continue;
+    for(vector<ll> g:G[x]){
+      ll nx = g[0], c = g[1], d = g[2];
+      ll nx_time = c+find(d, t);
+      if(dist[nx]<=nx_time) continue;
+      dist[nx] = nx_time;
+      q.emplace(nx_time, nx);
     }
   }
+  cout << (dist[N-1]==INF?-1:dist[N-1]) << endl;
 }
