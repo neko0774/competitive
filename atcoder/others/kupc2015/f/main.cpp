@@ -10,15 +10,9 @@ struct node{
   int num;
   char op;
   int ord;
-  //pointerを使わないとき
   int par = -1;
   int left = -1;
   int right = -1;
-
-  //pointerを使う
-  //node *par;
-  //node *left;
-  //node *right;
 
   node(){}
   //演算子の追加
@@ -55,22 +49,24 @@ int build(string S){
   return st.top();
 }
 
-void print(node cur){
-  if(cur.s==0) cout << cur.num;
-  if(cur.left!=-1)print(G[cur.left]);
-  if(cur.right!=-1)print(G[cur.right]);
-  if(cur.s==1) cout << cur.op;
-}
 
 int main(){
   string S;
   cin >> S;
   int root = build(S);
   int N = S.size();
-  for(int i=0;i<N;i++){
-    swap(G[i].left, G[i].right);
-    //cout << G[i].s << ' ' << G[i].left << ' ' << G[i].right << endl;
+  string ans;
+  queue<int> q;
+  q.push(root);
+  while(!q.empty()){
+    int x = q.front();q.pop();
+    if(G[x].s==0)ans.push_back(G[x].num+'0');
+    else{
+      ans.push_back(G[x].op);
+      q.push(G[x].left);
+      q.push(G[x].right);
+    }
   }
-  print(G[root]);
-  cout << endl;
+  reverse(ans.begin(), ans.end());
+  cout << ans << endl;
 }

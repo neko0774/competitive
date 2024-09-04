@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc048",
+    "title": "AtCoder Regular Contest 048",
+    "url": "https://atcoder.jp/contests/arc048"
+  },
+  "tasks": [
+    {
+      "id": "arc048_a",
+      "label": "A",
+      "title": "階段の下",
+      "url": "https://atcoder.jp/contests/arc048/tasks/arc048_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "arc048_b",
+      "label": "B",
+      "title": "AtCoderでじゃんけんを",
+      "url": "https://atcoder.jp/contests/arc048/tasks/arc048_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "arc048_c",
+      "label": "C",
+      "title": "足の多い高橋君",
+      "url": "https://atcoder.jp/contests/arc048/tasks/arc048_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "arc048_d",
+      "label": "D",
+      "title": "たこ焼き屋とQ人の高橋君",
+      "url": "https://atcoder.jp/contests/arc048/tasks/arc048_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    }
+  ]
+}

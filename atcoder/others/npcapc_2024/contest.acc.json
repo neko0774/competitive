@@ -1,0 +1,185 @@
+{
+  "contest": {
+    "id": "npcapc_2024",
+    "title": "NPCAPC 2024",
+    "url": "https://atcoder.jp/contests/npcapc_2024"
+  },
+  "tasks": [
+    {
+      "id": "npcapc_2024_a",
+      "label": "A",
+      "title": "Welcome to NPCAPC",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_b",
+      "label": "B",
+      "title": "Some Sum of Subset",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_c",
+      "label": "C",
+      "title": "Solve with Friends",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_d",
+      "label": "D",
+      "title": "Two Box",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_e",
+      "label": "E",
+      "title": "Aim High",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_e",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_f",
+      "label": "F",
+      "title": "Train Seats",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_f",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_g",
+      "label": "G",
+      "title": "Many Common Segment Problems",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_g",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_h",
+      "label": "H",
+      "title": "Music Game",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_h",
+      "directory": {
+        "path": "h",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_i",
+      "label": "I",
+      "title": "Left Equals Right",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_i",
+      "directory": {
+        "path": "i",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_j",
+      "label": "J",
+      "title": "Again Permutation Problem",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_j",
+      "directory": {
+        "path": "j",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_k",
+      "label": "K",
+      "title": "Peace with Magic",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_k",
+      "directory": {
+        "path": "k",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_l",
+      "label": "L",
+      "title": "Construction of Town",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_l",
+      "directory": {
+        "path": "l",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_m",
+      "label": "M",
+      "title": "Admired Person",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_m",
+      "directory": {
+        "path": "m",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_n",
+      "label": "N",
+      "title": "Product Matrix",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_n",
+      "directory": {
+        "path": "n",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_o",
+      "label": "O",
+      "title": "New School Term",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_o",
+      "directory": {
+        "path": "o",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "npcapc_2024_p",
+      "label": "P",
+      "title": "Make Testcase",
+      "url": "https://atcoder.jp/contests/npcapc_2024/tasks/npcapc_2024_p",
+      "directory": {
+        "path": "p",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
+    }
+  ]
+}

@@ -9,4 +9,6 @@ int main(){
     cin >> C[i];
   }
   
+
+
 }
