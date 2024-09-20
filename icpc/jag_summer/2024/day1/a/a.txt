@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  int N, Q;
+  cin >> N >> Q;
+  vector<int> A(N);
+  for(int i = 0; i < N; i++) {
+    cin >> A[i];
+  }
+  vector<int> L(Q), R(Q);
+  for(int i = 0; i < Q; i++) {
+    cin >> L[i] >> R[i];
+    L[i]--, R[i]--;
+  }
+
+  const int B = 400;
+  const int C = (N + B - 1) / B;
+  vector<vector<pair<int, int>>> group(C);
+  for(int i = 0; i < Q; i++) {
+    group[L[i] / B].push_back(make_pair(R[i], i));
+  }
+  for(int i = 0; i < C; i++) {
+    if(!group[i].empty()) sort(group[i].begin(), group[i].end());
+  }
+
+  unordered_map<int, int> cnt;
+  multiset<pair<int, int>> ms;
+  
+  auto ins = [&](int v) -> void {
+    if(!cnt.count(v)) {
+      cnt[v] = 1;
+      ms.insert(make_pair(1, v));
+      return;
+    }
+    const auto cur = make_pair(cnt[v], v);
+    const auto nxt = make_pair(cnt[v] + 1, v);
+    ms.erase(ms.find(cur));
+    ms.insert(nxt);
+    cnt[v]++;
+  };
+
+  auto del = [&](int v) -> void {
+    const auto cur = make_pair(cnt[v], v);
+    const auto nxt = make_pair(cnt[v] - 1, v);
+    ms.erase(ms.find(cur));
+    ms.insert(nxt);
+    cnt[v]--;
+  };
+
+  int p = 0, q = 0;
+  ins(A[0]);
+  vector<int> ans(Q);
+  for(const auto &v : group) {
+    for(const auto &qry : v) {
+      const int i = qry.second;
+      const int l = L[i];
+      const int r = R[i];
+      while(q < r) ins(A[++q]);
+      while(p > l) ins(A[--p]);
+      while(q > r) del(A[q--]);
+      while(p < l) del(A[p++]);
+      ans[i] = (*ms.rbegin()).second;
+    }
+  }
+
+  for(int i = 0; i < Q; i++) {
+    cout << ans[i] << "\n";
+  }
+}

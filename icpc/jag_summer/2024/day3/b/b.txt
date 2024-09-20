@@ -1,0 +1,68 @@
+#include<bits/stdc++.h>
+using namespace std;
+int H,W,id[500][500],cnt[500*500];
+int dr[4]={1,0,-1,0};
+int dc[4]={0,1,0,-1};
+string S[500];
+bool vis[500][500];
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+  cin>>H>>W;
+  for(int i=0;i<H;i++)cin>>S[i];
+  int num=0;
+  int sr=-1,sc=-1;
+  for(int i=0;i<H;i++)for(int j=0;j<W;j++)if(!vis[i][j]&&S[i][j]!='#')
+  {
+    vis[i][j]=1;
+    num++;
+    queue<pair<int,int>>q;
+    q.push({i,j});
+    while(q.size())
+    {
+      auto[r,c]=q.front();
+      q.pop();
+      id[r][c]=num;
+      cnt[num]++;
+      if(S[r][c]=='S')
+      {
+        sr=r,sc=c;
+      }
+      for(int d=0;d<4;d++)
+      {
+        int tr=r+dr[d];
+        int tc=c+dc[d];
+        if(0<=tr&&tr<H&&0<=tc&&tc<W&&S[tr][tc]!='#'&&!vis[tr][tc])
+        {
+          vis[tr][tc]=1;
+          q.push({tr,tc});
+        }
+      }
+    }
+  }
+  int start=id[sr][sc];
+  int ans=0;
+  for(int i=0;i<H;i++)for(int j=0;j<W;j++)if(id[i][j]==start)
+  {
+    for(int d=0;d<4;d++)
+    {
+      int tr=i+dr[d];
+      int tc=j+dc[d];
+      if(0<=tr&&tr<H&&0<=tc&&tc<W&&S[tr][tc]=='#')
+      {
+        ans=max(ans,1);
+        for(int e=0;e<4;e++)
+        {
+          int ttr=tr+dr[e];
+          int ttc=tc+dc[e];
+          if(0<=ttr&&ttr<H&&0<=ttc&&ttc<W&&id[ttr][ttc]>0&&id[ttr][ttc]!=id[i][j])
+          {
+            ans=max(ans,cnt[id[ttr][ttc]]+1);
+          }
+        }
+      }
+    }
+  }
+  ans+=cnt[start];
+  cout<<ans<<endl;
+}
